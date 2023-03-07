@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>小倩同学</title>
+    <meta name="language" content="zh-CN" />
+    <meta name="title" content="小倩同学" />
+    <meta name="viewport"
+        content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" type="image/x-icon" href="https://cdn.jsdelivr.net/gh/sun0225SUN/photos/img/20210715233345.png" />
+    <title>放烟花</title>
+    <link href="modal.css" rel="stylesheet" />
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            /* font-size: 30px; */
+        }
+
+        .city {
+            width: 100%;
+            position: fixed;
+            bottom: 0px;
+            z-index: 100;
+        }
+
+        .city img {
+            width: 100%;
+        }
+
+        audio {
+            opacity: 0;
+        }
+
+        #text {
+            width: 400px;
+            height: 425px;
+            left: 20px;
+            top: 80px;
+            position: absolute;
+            color: #f4dc68;
+        }
+
+        #code {
+            display: none;
+            font-size: 16px;
+        }
+
+        #clock-box {
+            position: absolute;
+            left: 30px;
+            bottom: 60px;
+            font-size: 14px;
+            display: none;
+            color: #f4dc68;
+        }
+
+        #clock-box a {
+            font-size: 18px;
+            text-decoration: none;
+            color: #7089CF;
+        }
+
+        #clock {
+            margin-left: 48px;
+        }
+
+        #clock .digit {
+            font-size: 18px;
+        }
+
+        #music {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            z-index: 1;
+        }
+    </style>
+
+</head>
+
+<body onselectstart="return false">
+    <div class="share_img"><img src="a8b.png" alt="" /></div>
+
+    <div class="page_one">
+        <div class="content">
+            <div class="text_wrapper">
+                <img src="a8.png" alt="" />
+                <div class="text">小仙女，我爱你，你愿意原谅我吗？</div>
+            </div>
+        </div>
+        <div class="btn-groups">
+            <div class="heart-btn">
+                <div id="yes" class="btn btn-a"><span>愿意</span></div>
+            </div>
+            <div id="no" class="btn btn-b"><span>不愿意</span></div>
+        </div>
+    </div>
+    <canvas id="cas" style="background-color: rgba(0, 5, 24, 1)">
+        浏览器不支持canvas
+    </canvas>
+    <div class="city">
+        <img src="city.png" alt="" />
+    </div>
+    <img src="moon.png" alt="" id="moon" style="visibility: hidden" />
+    <div style="display: none">
+        <div class="shape">张倩</div>
+        <div class="shape">我爱你</div>
+    </div>
+    <div id="">
+        <div id="text">
+            <div id="code">
+                <span class="say">一定要爱你</span><br /><br />
+                <span class="say">我知道你是一个天真善良温柔的女孩</span><br />
+                <span class="say">真的希望自己能够配上你</span><br />
+                <span class="say">如果你能给我机会让我好好的爱你</span><br />
+                <span class="say">真的只想真心真意对你说</span><br />
+                <br />
+                <span class="say">我爱你一定爱到花都开了 鸟儿把歌唱</span><br />
+                <span class="say">爱到牛郎织女为我们点头</span><br />
+                <span class="say">爱到花儿绽放鸟儿成群 把我们环绕</span><br />
+                <span class="say">爱到每道彩虹映出你的美</span><br />
+                <br />
+                <span class="say">我爱你一定爱到海枯石烂 永远不后悔</span><br />
+                <span class="say">爱到来生来世也会说无悔</span><br />
+                <span class="say">就把这首动听的歌唱给心爱的女孩</span><br />
+                <span class="say">真的希望你能给我个机会</span><br />
+                <span class="say">让我去爱你</span><br />
+                <br />
+                <span class="say"><span class="space"></span> -- 你的，太阳。</span>
+            </div>
+        </div>
+        <div id="clock-box">
+            <a href="https://sunguoqi.com" target="_blank">星星</a> 和
+            <a href="https://sunguoqi.com" target="_blank">月亮</a> 在一起的
+            <div id="clock"></div>
+        </div>
+    </div>
+    <video src="./music.mp3" autoplay loop muted id="music" style=""></video>
+</body>
+<script src="jquery.min.js"></script>
+<script src="fire.js"></script>
+<script src="talk.js"></script>
+<script>
+    document.body.addEventListener(
+        "mousedown",
+        function () {
+            console.log(11)
+            var vdo = $("video")[0]; //jquery
+            vdo.muted = false;
+        },
+        false
+    )
+</script>
+
+</html>
